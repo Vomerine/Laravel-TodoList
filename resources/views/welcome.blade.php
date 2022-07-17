@@ -26,7 +26,8 @@
         <div style="color:white">
             <h1>Todo List</h1>
 
-            <form method="post" action="{{route('saveItem')">
+            <form method="post" action="{{route('saveItem')}}" accept-charset="UTF-8">
+                @csrf
                 <label for="listItem">New Todo item</label></br>
                 <input type="text" name="listItem"></br>
                 <button type="submit">Save Item</button>

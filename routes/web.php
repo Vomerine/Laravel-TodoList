@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoListController; // Import controller
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//          concats in URL | Controller     | Controller function  | alias for call
+Route::post('/saveItem', [TodoListController::class, 'saveItem'])->name('saveItem');
