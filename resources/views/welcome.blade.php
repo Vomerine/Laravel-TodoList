@@ -28,7 +28,14 @@
 
 
             @foreach ($listItems as $listItem)
-                <p>Item {{ $loop->iteration }} :  {{ $listItem->name }}</p>
+                <div class="flex" style="align-items:center">
+                    <p>Item {{ $loop->iteration }} :  {{ $listItem->name }}</p>
+
+                    <form method="post" action="{{ route('markComplete', $listItem->id) }}" accept-charset="UTF-8">
+                        @csrf
+                        <button type="submit" style="margin-left: 20px">Mark Complete</button>
+                    </form>
+                </div>
             @endforeach
 
             <form method="post" action="{{route('saveItem')}}" accept-charset="UTF-8">
