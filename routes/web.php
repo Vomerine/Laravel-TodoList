@@ -14,9 +14,7 @@ use App\Http\Controllers\TodoListController; // Import controller
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodoListController::class, 'index']);
 
 //          concats in URL | Controller     | Controller function  | alias for call
 Route::post('/saveItem', [TodoListController::class, 'saveItem'])->name('saveItem');

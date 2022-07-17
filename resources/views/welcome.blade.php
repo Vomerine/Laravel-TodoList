@@ -26,6 +26,11 @@
         <div style="color:white">
             <h1>Todo List</h1>
 
+
+            @foreach ($listItems as $listItem)
+                <p>Item {{ $loop->iteration }} :  {{ $listItem->name }}</p>
+            @endforeach
+
             <form method="post" action="{{route('saveItem')}}" accept-charset="UTF-8">
                 @csrf
                 <label for="listItem">New Todo item</label></br>
